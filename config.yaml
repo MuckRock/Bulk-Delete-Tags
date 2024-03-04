@@ -9,7 +9,7 @@ properties:
   del_key:
     title: Key name of metadata you want to remove. 
     type: string
-    description: If _tag is selected, all tags be deleted. Otherwise, if you provide a key only the metadata under that key will be removed. 
+    description: If _tag is selected, you must specify a value of tag you'd like deleted or leave it blank and select clear all. You may provide a key name here instead.
     default: _tag 
   del_value:
     title: Value of the tag that you would like removed. 
