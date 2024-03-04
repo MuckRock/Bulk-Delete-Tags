@@ -11,5 +11,13 @@ properties:
     type: string
     description: If _tag is selected, all tags be deleted. Otherwise, if you provide a key only the metadata under that key will be removed. 
     default: _tag 
+  del_value:
+    title: Value of the tag that you would like removed. 
+    type: string
+    description: Only works if _tag is provided as the key name. 
+  clear_all:
+    title: Clear all tags?
+    type: boolean
+    description: Only works if _tag is provided as the key name and no value is specified.
 categories: 
   - bulk
