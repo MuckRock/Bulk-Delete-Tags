@@ -1,6 +1,6 @@
 title: Bulk Delete Tags
-description: This Add-On allows you to clear all tags or a specific key/value pair from a set of documents. If you select _tag, it will delete all tags on the document. 
-instructions: ''
+description: This Add-On allows you to clear all tags or a specific key/value pair from a set of documents. 
+instruction: "If you select _tag, you must either provide a tag value that you would like cleared or select clear_all and leave value empty. If you provide a key name instead, those keys will be removed."
 type: object
 documents:
   - selected
@@ -9,8 +9,6 @@ properties:
   del_key:
     title: Key name of metadata you want to remove. 
     type: string
-    description: If _tag is selected, you must specify a value of tag you'd like deleted or leave it blank and select clear all. You may provide a key name here instead.
-    default: _tag 
   del_value:
     title: Value of the tag that you would like removed. 
     type: string
