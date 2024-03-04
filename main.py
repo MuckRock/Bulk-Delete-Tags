@@ -20,6 +20,10 @@ class BulkDeleteTags(AddOn):
                 "If you want to delete a tag, you must provide _tag as the key name"
             )
 
+        if del_value is not None and clear_all is True:
+            self.set_message("You have selected clear all, but still provided a value. Clear all only works if you leave value blank and provide _tag as the key.")
+            sys.exit(0)
+
         if del_value is None and del_key == "_tag":
             if clear_all is True:
                 self.set_message("Clearing all tags")
