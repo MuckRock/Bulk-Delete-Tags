@@ -39,7 +39,7 @@ class BulkDeleteTags(AddOn):
                 else:
                     # Delete only the specified key
                     del document.data[del_key]
-                print(documment.data)
+                print(document.data)
                 document.put()
 
 
