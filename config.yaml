@@ -9,6 +9,7 @@ properties:
   del_key:
     title: Key name of metadata you want to remove. 
     type: string
+    default: _tag
   del_value:
     title: Value of the tag that you would like removed. 
     type: string
