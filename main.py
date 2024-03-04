@@ -29,6 +29,7 @@ class BulkDeleteTags(AddOn):
                 )
                 sys.exit(0)
         for document in self.get_documents():
+            print("Old data")
             print(document.data)
             if del_key in document.data:
                 if del_value is not None:
@@ -39,6 +40,7 @@ class BulkDeleteTags(AddOn):
                 else:
                     # Delete only the specified key
                     del document.data[del_key]
+                print("New data")
                 print(document.data)
                 document.put()
 
