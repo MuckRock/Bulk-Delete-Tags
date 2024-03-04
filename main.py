@@ -33,10 +33,9 @@ class BulkDeleteTags(AddOn):
             print(document.data)
             if del_key in document.data:
                 if del_value is not None:
-                    # Delete key-value pairs with matching value
-                    document.data = {
-                        k: v for k, v in document.data.items() if v != del_value
-                    }
+                    if del_value in document.data[del_key]:
+                        # Remove the del_value from the list
+                        document.data[del_key].remove(del_value)
                 else:
                     # Delete only the specified key
                     del document.data[del_key]
