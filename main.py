@@ -1,11 +1,13 @@
 """
-This Add-On allows you to bulk delete tags and/or key value pairs from a set of documents. 
+This Add-On allows you to bulk delete tags and/or key value pairs from a set of documents.
 """
+
 import sys
-from documentcloud.addon import AddOn
+import time
+from documentcloud.addon import SoftTimeOutAddOn
 
 
-class BulkDeleteTags(AddOn):
+class BulkDeleteTags(SoftTimeOutAddOn):
     """DocumentCloud Add-On to bulk remove tags"""
 
     def main(self):
@@ -22,7 +24,10 @@ class BulkDeleteTags(AddOn):
             sys.exit(0)
 
         if del_value is not None and clear_all is True:
-            self.set_message("You have selected clear all, but still provided a value. Clear all only works if you leave value blank and provide _tag as the key.")
+            self.set_message(
+                "You have selected clear all, but still provided a value. "
+                "Clear all only works if you leave value blank and provide _tag as the key."
+            )
             sys.exit(0)
 
         if del_value is None and del_key == "_tag":
@@ -30,7 +35,8 @@ class BulkDeleteTags(AddOn):
                 self.set_message("Clearing all tags")
             else:
                 self.set_message(
-                    "You have selected _tag with no value specified. If you want to clear all tags, you must check the clear all box."
+                    "You have selected _tag with no value specified. "
+                    "If you want to clear all tags, you must check the clear all box."
                 )
                 sys.exit(0)
         for document in self.get_documents():
@@ -47,6 +53,7 @@ class BulkDeleteTags(AddOn):
                 print("New data")
                 print(document.data)
                 document.put()
+            time.sleep(5)
 
 
 if __name__ == "__main__":

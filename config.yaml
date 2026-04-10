@@ -20,3 +20,4 @@ properties:
     description: Only works if _tag is provided as the key name and no value is specified.
 categories: 
   - bulk
+version: 2
