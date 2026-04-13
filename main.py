@@ -13,6 +13,8 @@ class BulkDeleteTags(SoftTimeOutAddOn):
     def main(self):
         """The main add-on functionality goes here."""
         # fetch your add-on specific data
+        self.client.session.headers.update({'User-Agent': 'Bulk Delete Tags Add-On'})
+        
         del_key = self.data.get("del_key")
         del_value = self.data.get("del_value")
         clear_all = self.data.get("clear_all", False)
